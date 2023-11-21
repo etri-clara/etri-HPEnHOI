@@ -1,4 +1,4 @@
-## Human Pose Estimation and Human Object Interaction
+# Human Pose Estimation and Human Object Interaction
 ![plot](./intro_img.png)
 
 ---
