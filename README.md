@@ -1,5 +1,5 @@
 ## Human Pose Estimation and Human Object Interaction
-![plot](./intro_img.jpg)
+![plot](./intro_img.png)
 
 ---
 # HPE
