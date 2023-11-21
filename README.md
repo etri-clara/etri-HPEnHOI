@@ -72,7 +72,7 @@ Multi GPU
   <img src="intro_hoi.png" width="90%" height="90%">
 </p>
 
-# Installation
+## Installation
 
 ```sh
 conda create -n hdecoder python=3.9 -y
@@ -117,7 +117,7 @@ Note that only Python2 can be used for this conversion because `vsrl_utils.py` i
 V-COCO annotations with the HOIA format, `corre_vcoco.npy`, `test_vcoco.json`, and `trainval_vcoco.json` will be generated to `annotations` directory.
 
 
-# Training
+## Training
 
 Single GPU
 ```sh
@@ -133,7 +133,7 @@ CUDA_VISIBLE_DEVICES=0 python hoi_entry.py train \
             RESUME_FROM checkpoints/xdecoder_focall_last.pt
 ```
 
-# Evaluation
+## Evaluation
 
 Single GPU
 ```sh
@@ -149,7 +149,7 @@ CUDA_VISIBLE_DEVICES=0 python hoi_entry.py evaluate \
             PYLEARN_MODEL checkpoints/vcoco_hdecoder_l.pt
 ```
 
-# Results
+## Results
 |Visual Feature Extractor| HOI-Decoder | Scenario 1 | Scenario 2 | Download | 
 | :--- | :--- | :---: | :---: | :---: |
 |X-Decoder (Focal-S)| CDN-S| - | - | [model](https://drive.google.com/file/d/1iObiF0s9aCEL95S13dUdXODImoUtn23P/view?usp=sharing) |
