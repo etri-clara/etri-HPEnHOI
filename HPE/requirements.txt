@@ -1,0 +1,14 @@
+EasyDict
+torch
+opencv-python
+Cython
+scipy
+json_tricks
+scikit-image
+tensorboardX
+torchvision==0.15.1
+matplotlib
+einops
+timm
+wandb
+scikit-learn
