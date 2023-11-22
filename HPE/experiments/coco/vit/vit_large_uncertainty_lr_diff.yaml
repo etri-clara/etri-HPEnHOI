@@ -1,0 +1,93 @@
+
+DATA_DIR: ''
+GPUS: '7'
+OUTPUT_DIR: 'output'
+LOG_DIR: 'log'
+WORKERS: 4
+PRINT_FREQ: 100
+
+DATASET:
+  DATASET: 'coco'
+  ROOT: 'data/coco/'
+  TEST_SET: 'val2017'
+  TRAIN_SET: 'train2017'
+  FLIP: true
+  ROT_FACTOR: 40
+  SCALE_FACTOR: 0.5
+  NUM_JOINTS_HALF_BODY: 8
+  PROB_HALF_BODY: 0.1
+  TARGET_KEYPOINT: True
+  TARGET_HEATMAP: True
+  
+MODEL:
+  INIT_WEIGHTS: true
+  NAME: vit
+  TYPE: 'large'
+
+  NUM_JOINTS: 17
+  # PRETRAINED: 'checkpoints/vitpose_large.pth'
+  PRETRAINED: 'checkpoints/mae_pretrain_vit_large.pth'
+  IMAGE_SIZE:
+  - 192
+  - 256
+  HEATMAP_SIZE:
+  - 48
+  - 64
+  DIFF_NAME:
+  - "backbone"
+  - "keypoint_head"
+  SCALE: 1
+  USE_AFTER_KP_HEAD: false 
+  SUM_TO_ONE: true
+  USE_EXP_KP: False 
+LOSS:
+  HM_LOSS: "JointMSEloss"
+  # HM_LOSS: "CEloss"
+  # UNC_LOSS: "SoftPlusloss"
+  USE_TARGET_WEIGHT: true
+  UNCERTAINTY: true
+  NORMALIZED_MAP: false  
+  USE_INDEXING: true
+  HM_LOSS_WEIGHT: 1
+  KP_LOSS_WEIGHT: 1
+TRAIN:
+  BATCH_SIZE: 64
+  SHUFFLE: true
+  BEGIN_EPOCH: 0
+  END_EPOCH: 211
+  RESUME: false
+
+  OPTIMIZER: 'adamW'
+  LR: 0.0005
+  LR_FACTOR: 0.1
+  LR_DIFF_FACTOR: 1
+  LR_STEP:
+  - 170
+  - 200
+  WD: 0.01
+  GAMMA1: 0.99
+  GAMMA2: 0.0
+  MOMENTUM: 0.9
+  NESTEROV: false
+
+TEST:
+  BATCH_SIZE: 150
+  COCO_BBOX_FILE: 'data/coco/person_detection_results/COCO_val2017_detections_AP_H_56_person.json'
+  FLIP_TEST: true
+  IMAGE_THRE: 0.0
+  IN_VIS_THRE: 0.2
+  MODEL_FILE: ''
+  NMS_THRE: 1.0
+  OKS_THRE: 0.9
+  USE_GT_BBOX: False
+  USE_UDP : True 
+  MODULATE_KERNEL: 11
+  SHIFT_TEST: False
+  SHIFT_HEATMAP: False
+
+
+EVALUATION:
+  INTERVAL: 10
+  METRIC: 'mAP'
+  SAVE_BEST: 'AP'
+
