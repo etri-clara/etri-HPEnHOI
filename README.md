@@ -1,5 +1,5 @@
 # Human Pose Estimation and Human Object Interaction
-![plot](./intro_img.png)
+![plot](./images/intro_img.png)
 
 ---
 # HPE
@@ -7,7 +7,7 @@
 ## Overview 
 <!-- ![image](https://github.com/thinkaicho/HPE/assets/75425941/17db2113-fc0b-4541-a488-c3e2a101fefe) -->
 <p align="center">
-  <img src="intro_hpe.png" width="90%" height="90%">
+  <img src="images/intro_hpe.png" width="90%" height="90%">
 </p>
 
 
@@ -62,6 +62,11 @@ Multi GPU
 | ------ | ------ | -----|
 | ViTPose_huge + uncertainty  | 77.1 | [model](https://drive.google.com/file/d/1YzmJt5aI35a6mbufDkHT3ahvOAKipqcY/view?usp=sharing) |
 
+## Results
+<p align="center">
+  <img src="images/result_hpe.png" width="90%" height="90%">
+</p>
+
 
 ---
 
@@ -69,7 +74,7 @@ Multi GPU
 
 ## :notes: Overview
 <p align="center">
-  <img src="intro_hoi.png" width="90%" height="90%">
+  <img src="images/intro_hoi.png" width="90%" height="90%">
 </p>
 
 ## Installation
